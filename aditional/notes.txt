@@ -1,0 +1,6 @@
+if you want rename property file - you have to use the parameter
+
+java -jar gs-producting-web-service-0.1.0.jar --spring.config.location=app.properties
+
+Example
+https://spring.io/guides/gs/producing-web-service/#initial

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns2:validateTokenResponse xmlns:ns2="http://tokenvalidation.sso.onlineservices.etisalat.ae/">
+         <return>
+            <accountNo>042025768</accountNo>
+            <AdditionalInfoList>
+               <additionalInfo>
+                  <name>name</name>
+                  <value>Amir Hossan</value>
+               </additionalInfo>
+               <additionalInfo>
+                  <name>internetUsername</name>
+                  <value>meln7as</value>
+               </additionalInfo>
+               <additionalInfo>
+                  <name>email</name>
+                  <value>mo7amed-eln7as@hotmail.com</value>
+               </additionalInfo>
+            </AdditionalInfoList>
+            <errorCode>00</errorCode>
+            <errorMsg>Query Is Valid</errorMsg>
+         </return>
+      </ns2:validateTokenResponse>
+   </S:Body>
+</S:Envelope>

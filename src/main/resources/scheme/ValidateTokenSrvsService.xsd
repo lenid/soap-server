@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. -->
+<xs:schema xmlns:tns="http://tokenvalidation.sso.onlineservices.etisalat.ae/"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+           targetNamespace="http://tokenvalidation.sso.onlineservices.etisalat.ae/">
+
+    <xs:element name="validateToken" type="tns:validateToken"/>
+
+    <xs:element name="validateTokenResponse" type="tns:validateTokenResponse"/>
+
+    <xs:complexType name="validateToken">
+        <xs:sequence>
+            <xs:element name="arg0" type="tns:validateTokenRequest" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="validateTokenRequest">
+        <xs:sequence>
+            <xs:element name="AdditionalInfoList" nillable="true" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="additionalInfo" type="tns:attributeDto" nillable="true" minOccurs="0"
+                                    maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="requestFlag" type="xs:int" nillable="true"/>
+            <xs:element name="serviceAccessPassword" type="xs:string"/>
+            <xs:element name="serviceAccessUsername" type="xs:string"/>
+            <xs:element name="sourcChannel" type="xs:string"/>
+            <xs:element name="token" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="attributeDto">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" minOccurs="0"/>
+            <xs:element name="value" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="validateTokenResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:validateSSOTokenResponse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="validateSSOTokenResponse">
+        <xs:sequence>
+            <xs:element name="accountNo" type="xs:string" minOccurs="0"/>
+            <xs:element name="AdditionalInfoList" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="additionalInfo" type="tns:attributeDto" nillable="true" minOccurs="0"
+                                    maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="errorCode" type="xs:string" minOccurs="0"/>
+            <xs:element name="errorMsg" type="xs:string" minOccurs="0"/>
+            <xs:element name="status" type="xs:string" minOccurs="0"/>
+            <xs:element name="username" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
